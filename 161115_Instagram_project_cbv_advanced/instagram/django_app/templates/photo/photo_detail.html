@@ -1,0 +1,17 @@
+<img src="{{ photo.image.url }}" alt="">
+<div>{{ photo.content }}</div>
+<div>{{ photo.created_date }}</div>
+
+
+<div>
+	<ul>
+		{% for comment in photo.photocomment_set.all %}
+		<li>{{ comment.content }}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<form action="" method="POST">{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">댓글달기</button>
+</form>

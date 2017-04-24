@@ -1,0 +1,88 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div id="album-detail">
+	<h4>{{ album.title }}</h4>
+	<div>
+		<span>{{ album.owner.email }}</span>
+		{% if album.description %}
+		<span>| {{ album.description }}</span>
+		{% endif %}
+	</div>
+	<a href="{% url 'photo:photo_add' album_pk=album.pk %}" class="btn btn-primary btn-sm btn-top-right">
+		<span class="glyphicon glyphicon-plus"></span>
+		Add Photo
+	</a>
+	<div class="photo-list">
+		{% for photo in album.photo_set.all %}
+		<div class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+				<a href="{% url 'photo:photo_detail' pk=photo.pk %}">
+					<img src="{{ photo.img_thumbnail.url }}" alt="">
+				</a>
+				<div class="caption">
+					<div>
+						<strong>{{ photo.title }}</strong>
+					</div>
+					<div>
+						<span>{{ photo.owner.email }}</span>
+						{% if photo.description %}
+						<span>| {{ photo.description }}</span>
+						{% endif %}
+					</div>
+					<div class="like-container">
+						<form action="{% url 'photo:photo_like' pk=photo.pk like_type='like' %}" method="POST" class="like-form">{% csrf_token %}
+							<button
+								class="btn label
+									{% if user in photo.like_users.all %}label-info
+									{% else %}label-default
+									{% endif %}"
+							  type="submit"
+								data-toggle="tooltip"
+								data-placement="right"
+								title="
+									{% for user in photo.like_users.all|slice:'3' %}
+										{{ user.email }}{% if not forloop.last %},
+										{% endif %}
+
+										{% if photo.like_users.count > 3 %}
+										외 {{ photo.like_users.count|add:'-3' }}명
+										{% endif %}
+									{% endfor %}
+								">
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+								<span> {{ photo.like_users.count }}</span>
+							</button>
+						</form>
+
+						<form action="{% url 'photo:photo_like' pk=photo.pk like_type='dislike' %}" method="POST" class="like-form">{% csrf_token %}
+							<button
+								class="btn label
+									{% if user in photo.dislike_users.all %}label-danger
+									{% else %}label-default
+									{% endif %}"
+							  type="submit"
+								data-toggle="tooltip"
+								data-placement="right"
+								title="
+									{% for user in photo.dislike_users.all|slice:'3' %}
+										{{ user.email }}{% if not forloop.last %},
+										{% endif %}
+
+										{% if photo.dislike_users.count > 3 %}
+										외 {{ photo.dislike_users.count|add:'-3' }}명
+										{% endif %}
+									{% endfor %}
+								">
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+								<span> {{ photo.dislike_users.count }}</span>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

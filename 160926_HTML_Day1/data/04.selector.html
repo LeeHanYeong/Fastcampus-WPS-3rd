@@ -1,0 +1,113 @@
+<!-- html:5 [tab] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- link [tab] -->
+  <link rel="stylesheet" href="selector.css">
+
+  <title>Document</title>
+</head>
+<body>
+  <!-- 우선순위 -->
+  <div id="priority" class="pri1 pri2 pri3 pri4 pri5 pri6 pri7 pri8 pri9 pri10 pri11">우선순위는 무엇이 먼저</div>
+
+  <!-- Pseudo-Classes Selector -->
+  <a>링크가 없는 Anchor태그</a>
+  <a href="http://naver.com" class="pseudo">가상 클래스 선택자</a>
+  <p class="asdf">ASDF<br>Second line</p>
+
+  <!-- Attribute Selector -->
+  <a>Attribute Selector</a>
+  <a href="">Attribute Selector</a>
+  <a href="naver.com">Attribute Selector</a>
+  <a href="value abc">Attribute Selector</a>
+  <a href="abcdefg">Attribute Selector</a>
+  <a href="abc-sdf">Attribute Selector</a>
+  <a href="asdfabcsef">Attribute Selector</a>
+
+  <!-- Combinator Selector -->
+  <div>
+    <h1>Headline1</h1>
+    <div>Another first</div>
+    <ul>
+      <li>ul1 item</li>
+      <li>ul1 item</li>
+    </ul>
+    <ul>
+      <li>ul2 item</li>
+      <li>ul2 item</li>
+    </ul>
+  </div>
+
+
+  <!-- section>ul>li{item$}*4+li>ul>li{inner item$}*3 -->
+  <!-- section>ul -->
+  <section>
+    <ul>
+      <!-- li{item$}*4+li -->
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <li>
+        <!-- ul>li{inner item$}*3 -->
+        <ul>
+          <li>inner item1</li>
+          <li>inner item2</li>
+          <li>inner item3</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+  <section>
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <li>
+        <ul>
+          <li>inner item1</li>
+          <li>inner item2</li>
+          <li>inner item3</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <!-- 들여쓰기 / 되돌리기 -->
+  <!-- 영역선택후 tab, 되돌릴 경우 shift+tab -->
+
+  <!-- (h3#index-title>lorem4) -->
+  <h3 id="index-title">Lorem ipsum dolor sit.</h3>
+  <!-- p#index-description.index-item -->
+  <p id="index-description" class="index-item">일반텍스트로 나타내보세요</p>
+  <div id="index-description">div#index-description</div>
+  <!-- (div.section>(p.section-title>lorem5)+(p.section-content>lorem5))*2 -->
+  <!-- (div.section>(p.section-title{Real Text1})+(p.section-content{Not dummy}))*2 -->
+  <!-- 되돌리기(취소) [Win, Linux] Ctrl+z , [Mac] Cmd+z -->
+
+  <div class="section">
+    <p class="section-title">Lorem ipsum dolor sit amet.</p>
+    <p class="section-content">Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="section">
+    <p class="section-title">Quibusdam ullam incidunt, maiores tempora?</p>
+    <p class="section-content">Ullam aspernatur quo, voluptate deserunt.</p>
+  </div>
+
+  <h1>Headline1</h1>
+  <h2>Headline2</h2>
+
+  <p>paragraph</p>
+  <span>span</span>
+
+  <!-- lorem<숫자> [tab] -->
+  <span>Lorem ipsum dolor.</span>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div id="album_list">
+	<h4>Album list</h4>
+	<a href="{% url 'photo:album_add' %}" class="btn btn-primary btn-sm btn-top-right">
+		<span class="glyphicon glyphicon-plus"></span>
+		Add Album
+	</a>
+	<ul class="list-group">
+		{% for album in albums %}
+		<li class="list-group-item">
+			<span class="badge">{{ album.photo_set.count }}</span>
+			<div>
+				<a href="{% url 'photo:album_detail' pk=album.pk %}">
+					<strong>{{ album.title }}</strong>
+				</a>
+			</div>
+			<span>{{ album.owner.email }}</span>
+			{% if album.description %}
+			<span> | {{ album.description }}</span>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

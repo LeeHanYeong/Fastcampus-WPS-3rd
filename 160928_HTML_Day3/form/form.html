@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    input, select, button {
+      /*display: block;*/
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <h3>textarea</h3>
+
+    <textarea cols="30" rows="30"></textarea>
+
+    <h3>fieldset and legned</h3>
+    <!-- fieldset>legend{Login}+label{username : }+input[type="text"]+label{password : }+input[type="password"] -->
+    <fieldset>
+      <legend>Login</legend>
+      <label for="">username : </label>
+      <input type="text">
+      <label for="">password : </label>
+      <input type="password">
+    </fieldset>
+
+    <h3>buttons</h3>
+    <button type="submit">submit type button</button>
+    <button type="submit">reset type button</button>
+    <button type="submit">button type button</button>
+
+    <h3>select</h3>
+    <!-- select[name="number"]#select-id>option[value=$]{item$}*4 -->
+    <select name="number" id="select-id" size="2">
+      <option value="1">item1</option>
+      <option value="2">item2</option>
+      <option value="3">item3</option>
+      <option value="4">item4</option>
+    </select>
+
+    <h3>input</h3>
+    <input type="text" id="username" value="exist">
+    <input type="password" id="password">
+    <input type="radio" id="radio1" name="radio">
+    <input type="radio" id="radio2" name="radio">
+    <input type="checkbox" id="checkbox">
+    <input type="button" value="Button">
+    <input type="file" id="file">
+    <input type="submit" value="Submit">
+    <input type="reset">
+    <input type="hidden" id="hidden" value="hiddenValue">
+  </form>
+</body>
+</html>

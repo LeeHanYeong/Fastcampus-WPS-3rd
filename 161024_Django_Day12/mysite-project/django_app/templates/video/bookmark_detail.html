@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+<!-- video인스턴스를 받아 플레이어 출력 -->
+
+{% block content %}
+
+<div>{{ video.youtube_id }}</div>
+
+<iframe
+	width="560"
+	height="315"
+	src="https://www.youtube.com/embed/{{ video.youtube_id }}"
+	frameborder="0"
+	allowfullscreen>
+</iframe>
+{% endblock %}

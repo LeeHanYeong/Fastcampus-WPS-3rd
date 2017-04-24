@@ -1,0 +1,28 @@
+<!-- static 태그를 사용하겠다고 선언 -->
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- 전달받아온 title변수를 사용합니다 -->
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+	<!-- <link rel="stylesheet" href="/static/css/post_list.css"> -->
+</head>
+<body>
+	<!-- 전달받아온 title변수를 사용합니다 -->
+	<h1>{{ title }}</h1>
+
+	<!-- Django template language - for loop -->
+	{% for post in posts %}
+	<article>
+		<h5>{{ post }}</h5>
+		<h4 class="post-title">{{ post.title }}</h4>
+		<p class="post-description">{{ post.description }}</p>
+		<p class="post-created">{{ post.created }}</p>
+	</article>
+	{% endfor %}
+</body>
+</html>

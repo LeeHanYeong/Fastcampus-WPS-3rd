@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "common.min.css",
+	"sources": [
+		"../sass/common.sass",
+		"../sass/_variables.sass"
+	],
+	"mappings": "AAEA,AAAA,UAAU,AAAC,CACT,gBAAgB,CCDH,GAAO,CDCc",
+	"names": []
+}

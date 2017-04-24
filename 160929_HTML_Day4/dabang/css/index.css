@@ -1,0 +1,32 @@
+nav.navbar-no-margin {
+  margin: 0;
+}
+
+.index-content .index-image-container {
+  position: relative;
+  background-image: url(../images/index-bg.jpg);
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 678px;
+}
+
+.index-content .index-image-container .caption-container {
+  position: absolute;
+  left: 50%;
+  top: 160px;
+  margin-left: -420px;
+  color: white;
+  text-align: right;
+}
+
+.index-content .index-image-container .caption-container .caption-top {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.index-content .index-image-container .caption-container .caption-bottom {
+  font-size: 36px;
+}
+
+/*# sourceMappingURL=index.css.map */

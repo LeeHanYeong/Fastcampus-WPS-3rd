@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+  <h3>table-layout</h3>
+  <table class="table-layout">
+    <tr>
+      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ad, veniam laborum odit ducimus officia ipsam quos ullam vitae reiciendis, eligendi quisquam unde. Repellat iusto modi, dolorem quia quis, officia amet nisi illo ratione, laudantium at voluptatem rem numquam tenetur maxime eligendi voluptatum quisquam. Praesentium dolor, maxime facere quaerat alias.</td>
+      <td>Quibusdam, optio culpa vel?</td>
+    </tr>
+    <tr>
+      <td>Lorem ipsum dolor sit.</td>
+      <td>Nulla, aliquid aperiam tempore.</td>
+    </tr>
+  </table>
+
+  <h3>border-collapse, border-spacing</h3>
+  <table class="table-collapse">
+    <tr>
+      <td>item1</td>
+      <td>item2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>item1</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>item1</td>
+      <td>item2</td>
+      <td>item3</td>
+    </tr>
+  </table>
+
+  <h3>thead, tbody, tfoot</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>th1</th>
+        <th>th2</th>
+        <th>th3</th>
+        <th>th4</th>
+        <th>th5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>td1</td>
+        <td>td2</td>
+        <td>td3</td>
+        <td>td4</td>
+        <td>td5</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>td1</td>
+        <td>td2</td>
+        <td>td3</td>
+        <td>td4</td>
+        <td>td5</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>td1</td>
+        <td>td2</td>
+        <td>td3</td>
+        <td>td4</td>
+        <td>td5</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h3>colgroup</h3>
+  <table>
+    <colgroup>
+      <!-- col.col-$*5 -->
+      <col class="col-1">
+      <col class="col-2">
+      <col class="col-3">
+      <col span="2" class="col-4">
+    </colgroup>
+    <tr>
+      <th>이름</th>
+      <th>나이</th>
+      <th>성별</th>
+      <th>100M</th>
+      <th>윗몸</th>
+    </tr>
+    <tr>
+      <td>홍길동</td>
+      <td>22세</td>
+      <td>남</td>
+      <td>15.25</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>황진이</td>
+      <td>20세</td>
+      <td>여</td>
+      <td>16.12</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td colspan="3">참가자 평균</td>
+      <td>15.7</td>
+      <td>35</td>
+    </tr>
+  </table>
+  <!-- table>(tr>th*5)+(tr>td*5)*2+(tr>td[colspan=3]+td*2) -->
+
+  <h3>colspan, rowspan</h3>
+  <table>
+    <tr>
+      <td>item1</td>
+      <td colspan="2">item2</td>
+      <!-- <td>item3</td> -->
+      <td>item4</td>
+    </tr>
+    <tr>
+      <td rowspan="3">item1</td>
+      <td>item2</td>
+      <td colspan="2" rowspan="2">item3</td>
+      <!-- <td>item4</td> -->
+    </tr>
+    <tr>
+      <!-- <td>item1</td> -->
+      <td>lorem10</td>
+      <!-- <td>item3</td>
+      <td>item4</td> -->
+    </tr>
+    <tr>
+      <!-- <td>item1</td> -->
+      <td>item2</td>
+      <td>item3</td>
+      <td>item4</td>
+    </tr>
+  </table>
+
+  <h3>table basic</h3>
+  <!-- table>(tr>th*3)+(tr>td*3)*2 -->
+  <!-- table [tab] -->
+  <table>
+    <!-- tr>th*3 [tab] -->
+    <tr>
+      <th>이름</th>
+      <th>나이</th>
+      <th>점수</th>
+    </tr>
+    <!-- tr>td*3 [tab] -->
+    <tr>
+      <td>철수</td>
+      <td>23세</td>
+      <td>70점</td>
+    </tr>
+    <tr>
+      <td>영희</td>
+      <td>21세</td>
+      <td>89점</td>
+    </tr>
+    <tr>
+      <td colspan="2">평균점수</td>
+      <td>79.5점</td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'common/base.html' %}
+
+{% block head %}
+<meta property="og:url"           content="{{ request.scheme }}://naver.com" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Friends ranking" />
+<meta property="og:description"   content="당신에게 가장 관심이 많은 친구를 알아보세요!" />
+{% endblock %}
+
+{% block content %}
+<div class="fb-like"
+		data-href="{{ request.scheme }}://naver.com"
+		data-layout="standard"
+		data-action="like"
+		data-share="true"
+		data-show-faces="true">
+<form id="sns-facebook-friends-ranking" method="POST">{% csrf_token %}
+	<input type="hidden" name="access_token" value="{{ access_token }}">
+	<input type="hidden" name="facebook_user_id" value="{{ facebook_user_id }}">
+	<h3>Facebook friends ranking</h3>
+	<ul class="list-unstyled list-ranking">
+		{% for item in most_dict_list %}
+		<li>
+			<img src="{{ item.info.picture.data.url }}" alt="" class="img-profile" width="50px">
+			<div class="vcenter">
+				<p class="item-title">[{{ forloop.counter}}위] {{ item.info.name }}</p>
+				<p class="item-description">내 타임라인에 작성한 댓글 수 : <strong>{{ item.number }}</strong></p>
+			</div>
+		</li>
+{#		<input name="item" type="text" value="{{ item }}" style="width: 300px;">#}
+		{% endfor %}
+	</ul>
+	<button class="btn btn-primary">전송</button>
+</form>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Photo list</title>
+</head>
+<body>
+	<!--<div>{{ object_list }}</div>-->
+	<!--<div>{{ photos }}</div>-->
+	<!--<div>{{ page_obj }}</div>-->
+	<a href="{% url 'photo:photo_add' %}">
+		<h2>사진추가</h2>
+	</a>
+
+	<h3>Photo list</h3>
+
+
+
+	{% for photo in object_list %}
+	<div>
+		<img src="{{ photo.image.url }}" alt="">
+		<h5>{{ photo.content }}</h5>
+		<p>{{ photo.created_date }}</p>
+	</div>
+	{% endfor %}
+
+
+	<div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+          </span>
+
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">next</a>
+          {% endif %}
+      </span>
+  </div>
+</body>
+</html>

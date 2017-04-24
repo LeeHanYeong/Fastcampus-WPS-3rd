@@ -1,0 +1,40 @@
+p.p-justify {
+  text-align: justify;
+}
+
+.ori {
+  font-size: 30px;
+}
+.vitem {
+  font-size: 10px;
+}
+.item1 {
+  vertical-align: baseline;
+}
+.item2 {
+  vertical-align: sub;
+}
+.item3 {
+  vertical-align: super;
+}
+.item4 {
+  vertical-align: top;
+}
+.item5 {
+  vertical-align: bottom;
+}
+.item6 {
+  vertical-align: text-top;
+}
+.item7 {
+  vertical-align: text-bottom;
+}
+.item8 {
+  vertical-align: middle;
+}
+
+.textbox {
+  width: 300px;
+  border: 1px solid black;
+  white-space: pre-wrap;
+}

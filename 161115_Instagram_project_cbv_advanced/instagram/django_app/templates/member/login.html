@@ -1,0 +1,17 @@
+{% extends 'common/base.html' %}
+
+{% block wrap_title %}Login{% endblock %}
+{% block content %}
+<div class="col-md-6 col-md-offset-3">
+	<form action="" method="POST">{% csrf_token %}
+		{% for field in form %}
+		<div class="form-group">
+			{{ field.label_tag }}
+			{{ field }}
+			{{ field.errors }}
+		</div>
+		{% endfor %}
+		<button type="submit" class="btn btn-primary btn-block">로그인</button>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "photo.min.css",
+	"sources": [
+		"../sass/photo.sass"
+	],
+	"mappings": "AAAA,AACE,aADW,CACX,WAAW,AAAC,CACV,UAAU,CAAE,IAAK,CAAG,AAFxB,AAIQ,aAJK,CAGX,eAAe,CACb,IAAI,AAAA,UAAU,AAAC,CACb,OAAO,CAAE,MAAO,CAAG",
+	"names": []
+}

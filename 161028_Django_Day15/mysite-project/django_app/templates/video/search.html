@@ -1,0 +1,72 @@
+{% extends 'common/base.html' %}
+{% load app_filters %}
+{% load humanize %}
+
+{% block content %}
+	<h5>"{{ keyword }}"로 검색 (총 {{ response.pageInfo.totalResults|intcomma }}건의 검색결과)</h5>
+	<form action="">
+		<input type="text" name="keyword" placeholder="{{ keyword }}">
+		<button type="submit">검색</button>
+	</form>
+
+	<ul>
+		{% for item in response.items %}
+		<li>
+			<img src="{{ item.snippet.thumbnails.medium.url }}" alt="">
+			<p>{{ item.snippet.title }}</p>
+			<p>{{ item.snippet.description }}</p>
+			<p>{{ item.snippet.publishedAt|string_to_date|date:"Y.m.d h:i" }}</p>
+			<p>View count : {{ item.statistics.viewCount|intcomma }}</p>
+			<p>Like count : {{ item.statistics.likeCount|intcomma }}</p>
+			<p>Comment count : {{ item.statistics.commentCount|intcomma }}</p>
+			<div>
+				{% for tag in item.snippet.tags %}
+				<span class="label label-default">{{ tag }}</span>
+				{% endfor %}
+			</div>
+
+			<!--
+				form에서 video:bookmark_add URL에 POST요청
+				요청하는 name은 view에서 참조
+				각 input에 value에 값을 지정
+			-->
+			{% if item.is_exist %}
+			<button>Already added</button>
+			{% else %}
+			<form action="{% url 'video:bookmark_add' %}" method="POST">{% csrf_token %}
+				<input type="hidden" name="kind" value="{{ item.kind }}">
+				<input type="hidden" name="video_id" value="{{ item.id }}">
+				<input type="hidden" name="title" value="{{ item.snippet.title }}">
+				<input type="hidden" name="description" value="{{ item.snippet.description }}">
+				<input type="hidden" name="published_date" value="{{ item.snippet.publishedAt }}">
+				<input type="hidden" name="thumbnail_url" value="{{ item.snippet.thumbnails.high.url }}">
+				<input type="hidden" name="path" value="{{ request.get_full_path }}">
+				<button type="submit">Add bookmark</button>
+			</form>
+			{% endif %}
+		</li>
+		{% endfor %}
+		<!--
+			response내부에 nextPageToken, prevPageToken이 있는경우를 판단해서
+			이전페이지/다음페이지 버튼을 만들어보세요
+
+			URL에 Get parameter설정법 공부하세요
+		-->
+		{% if response.prevPageToken %}
+		<a href="{% url 'video:search' %}?keyword={{ keyword }}&page_token={{ response.prevPageToken }}">이전페이지</a>
+		{% endif %}
+
+		<!--
+			첫 페이지로 가기 버튼 만들어보세요
+				(첫 페이지에선 나오면 안 됩니다)
+		-->
+		{% if response.prevPageToken %}
+		<a href="{% url 'video:search' %}?keyword={{ keyword }}">첫 페이지로 가기</a>
+		{% endif %}
+
+
+		{% if response.nextPageToken %}
+		<a href="{% url 'video:search' %}?keyword={{ keyword }}&page_token={{ response.nextPageToken }}">다음페이지</a>
+		{% endif %}
+	</ul>
+{% endblock %}

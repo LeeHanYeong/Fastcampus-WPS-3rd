@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- index custom css -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!--
+    부트스트랩 컴포넌트 - 네비게이션 바
+    http://bootstrapk.com/components/#navbar
+
+    nav요소:
+      이 요소가 네비게이션임을 알려줍니다.
+      .navbar
+        네비게이션 바의 전체 형태를 나타내는 클래스입니다
+      .navbar-default
+        네비게이션 바의 형태를 제외한 스타일(border, background)을 지정합니다
+        .navbar-inverse로 바꾸면 색상이 반전됩니다
+      .navbar-no-margin
+        .navbar에 기본적으로 설정되어있는 margin-bottom값을 초기화해주기위해 설정
+  -->
+  <nav class="navbar navbar-default navbar-no-margin">
+    <!--
+      네비게이션 바의 내용을 넣는 block요소입니다.
+      가로 너비 전체를 사용할 것이므로 .container-fluid클래스를 사용합니다
+    -->
+    <div class="container-fluid">
+      <!--
+        .navbar-header
+          네비게이션바의 헤더 역할을 합니다
+          가장 좌측에 배치됩니다.
+          .navbar-brand
+            내부에 img요소를 넣으면 로고 이미지로 사용가능합니다
+      -->
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.png" alt="">
+        </a>
+      </div><!-- navbar-header end -->
+      <!--
+        .nav
+          navbar내부의 ul리스트 역할을 하며, 동시에 리스트의 스타일을 표시합니다
+            list-style: none;
+        .navbar-nav > li:
+          ul.navbar-nav클래스내의 li(리스트아이템)요소는 좌측부터 우로 쌓이는 형태로 만들어지도록 정의합니다
+            float: left; display: block;
+        .navbar-right:
+          네비게이션 바 내부에서 float: right;속성으로 우측 정렬을 지원합니다.
+      -->
+      <ul class="nav navbar-nav navbar-right">
+        <!-- (li>a[href=#])*5 -->
+        <li><a href="#">방 검색</a></li>
+        <li><a href="#">관심목록</a></li>
+        <li><a href="#">방 등록</a></li>
+        <!-- 공백을 나타내기 위해 빈 li요소를 추가해줍니다 -->
+        <li><a></a></li>
+        <li><a href="#">공인중개사 가입</a></li>
+        <li><a href="#">회원가입 및 로그인</a></li>
+      </ul><!-- ul (네비게이션 바 내부 아이템 리스트 끝) -->
+    </div><!-- .container-fluid(네비게이션 바의 내용부분 끝) -->
+  </nav><!-- .nav (네비게이션 바 전체 끝) -->
+
+  <!--
+    index페이지의 내용부분을 담는 block요소입니다.
+    현재는 아무 속성도 없습니다
+  -->
+  <div class="index-content">
+    <!--
+      부트스트랩 컴포넌트 - 점보트론
+      http://bootstrapk.com/components/#jumbotron
+
+      .index-image-container
+        background-image를 설정해줍니다
+    -->
+    <div class="jumbotron index-image-container">
+      <!--
+        .caption-container
+          .index-image-container 내부의 텍스트 요소를 가지는 block요소입니다
+
+          .caption-top, .caption-bottom
+            텍스트를 나타냅니다
+      -->
+      <div class="caption-container">
+        <p class="caption-top">850만 명이 선택한 대표 부동산 앱</p>
+        <p class="caption-bottom">우리, 살고 싶은 데서 살자</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

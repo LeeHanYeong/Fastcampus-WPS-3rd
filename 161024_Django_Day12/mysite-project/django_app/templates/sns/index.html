@@ -1,0 +1,22 @@
+{% extends 'common/base.html' %}
+
+{% block head %}
+<meta property="og:url"           content="{{ request.scheme }}://naver.com" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Friends ranking" />
+<meta property="og:description"   content="당신에게 가장 관심이 많은 친구를 알아보세요!" />
+{% endblock %}
+
+{% block content %}
+
+<div id="sns-index">
+	<div class="fb-like"
+		data-href="{{ request.scheme }}://naver.com"
+		data-layout="standard"
+		data-action="like"
+		data-share="true"
+		data-show-faces="true">
+	<h3>SNS application</h3>
+	<a href="https://www.facebook.com/v2.8/dialog/oauth?client_id=338774269808826&response_type=code&scope=user_friends,public_profile,email,user_posts&redirect_uri=http://{{ request.META.HTTP_HOST }}{% url 'sns:friends_ranking' %}" class="btn btn-danger">Friends ranking!</a>
+</div>
+{% endblock %}

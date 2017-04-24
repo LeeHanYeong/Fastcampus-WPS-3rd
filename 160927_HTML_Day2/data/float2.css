@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+div.float-element {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  background: black;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  opacity: 0.6;
+}
+.fl1 {
+  float: right;
+}
+.fl2 {
+  float: right;
+}
+.fl3 {
+  float: right;
+}
+
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+
+.float-img {
+  float: left;
+}
+
+.clear {
+  background-color: gray;
+  clear: left;
+}

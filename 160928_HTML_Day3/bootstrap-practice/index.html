@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootstrap practice</title>
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.min.css">
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+  <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+  <!-- nav.navbar.navbar-fixed-top>ul.nav.navbar-nav>(li>a[href=#])*4 -->
+  <nav class="navbar navbar-default navbar-no-margin">
+    <div class="container-fluid">
+      <!-- 이 부분이 네비게이션바의 Header입니다 -->
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.png" alt="">
+        </a>
+      </div>
+
+      <!-- 이 부분은 네비게이션 아이템의 리스트로, navbar-right속성으로 우측으로 달라붙습니다 -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">방 검색</a></li>
+        <li><a href="#">관심목록</a></li>
+        <li><a href="#">방 등록</a></li>
+        <li class="nav-blank"></li>
+        <li><a href="#">공인중개사 가입</a></li>
+        <li><a href="#">회원가입 및 로그인</a></li>
+        <!-- <li><a href="#"></a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <div class="index-img-container">
+    <div class="index-img-caption">
+      <div class="caption-top">850만 명이 선택한 대표 부동산 앱</div>
+      <div class="caption-bottom">우리, 살고 싶은 데서 살자</div>
+    </div>
+
+    <div class="index-search-container">
+      <div class="input-container">
+        <input type="text" class="input-search">
+        <button class="btn-search">방 검색</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

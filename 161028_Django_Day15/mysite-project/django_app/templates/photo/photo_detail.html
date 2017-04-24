@@ -1,0 +1,58 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div id="photo-detail">
+	<h4>{{ photo.title }}</h4>
+	<p>{{ photo.description }} | {{ photo.owner.email }}</p>
+	<img src="{{ photo.img.url }}" alt="" class="thumbnail photo-img">
+	<div class="like-container">
+		<form action="{% url 'photo:photo_like' pk=photo.pk like_type='like' %}?next={{ request.path }}" method="POST" class="like-form">{% csrf_token %}
+			<button
+				class="btn
+					{% if user in photo.like_users.all %}btn-info
+					{% else %}btn-default
+					{% endif %}"
+			  type="submit"
+				data-toggle="tooltip"
+				data-placement="right"
+				title="
+					{% for user in photo.like_users.all|slice:'3' %}
+						{{ user.email }}{% if not forloop.last %},
+						{% endif %}
+
+						{% if photo.like_users.count > 3 %}
+						외 {{ photo.like_users.count|add:'-3' }}명
+						{% endif %}
+					{% endfor %}
+				">
+				<span class="glyphicon glyphicon-thumbs-up"></span>
+				<span> {{ photo.like_users.count }}</span>
+			</button>
+		</form>
+
+		<form action="{% url 'photo:photo_like' pk=photo.pk like_type='dislike' %}?next={{ request.path }}" method="POST" class="like-form">{% csrf_token %}
+			<button
+				class="btn
+					{% if user in photo.dislike_users.all %}btn-danger
+					{% else %}btn-default
+					{% endif %}"
+			  type="submit"
+				data-toggle="tooltip"
+				data-placement="right"
+				title="
+					{% for user in photo.dislike_users.all|slice:'3' %}
+						{{ user.email }}{% if not forloop.last %},
+						{% endif %}
+
+						{% if photo.dislike_users.count > 3 %}
+						외 {{ photo.dislike_users.count|add:'-3' }}명
+						{% endif %}
+					{% endfor %}
+				">
+				<span class="glyphicon glyphicon-thumbs-down"></span>
+				<span> {{ photo.dislike_users.count }}</span>
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

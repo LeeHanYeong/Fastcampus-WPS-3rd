@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<div id="photo-add">
+	<h4>Photo add</h4>
+	<form action="" enctype="multipart/form-data" method="POST">{% csrf_token %}
+		<div class="form-group">
+			{{ form.title.label_tag }}
+			{{ form.title }}
+			{{ form.title.errors }}
+		</div>
+		<div class="form-group">
+			{{ form.description.label_tag }}
+			{{ form.description }}
+			{{ form.description.errors }}
+		</div>
+		<div class="form-group">
+			{{ form.img.label_tag }}
+			{{ form.img }}
+			{{ form.img.errors }}
+		</div>
+		<button type="submit" class="btn btn-primary">Add photo</button>
+	</form>
+</div>
+{% endblock %}

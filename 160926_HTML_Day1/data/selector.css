@@ -1,0 +1,123 @@
+/*
+Atom화면 분할
+View -> Panes -> Split(Up, Down, Left, Right)
+*/
+h1 {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+}
+p {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+
+.section {
+  color: #333;
+  margin-bottom: 40px;
+}
+p.section-title {
+  font-size: 18px;
+}
+p.section-content {
+  font-size: 13px;
+  line-height: 13px;
+  color: #999;
+}
+
+
+#index-title {
+  font-size: 38px;
+}
+p#index-description {
+  font-size: 12px;
+  color: cyan;
+}
+
+
+section ul {
+  border: 1px solid black;
+}
+section>ul {
+  border: 3px solid blue;
+}
+
+
+h1~ul {
+  background-color: Cyan;
+  color: green;
+}
+h1+ul {
+  background-color: yellow;
+  color: DarkBlue;
+}
+
+a.pseudo:link {
+  color: green;
+  text-decoration: line-through;
+}
+a.pseudo:active {
+  color: cyan;
+  font-size: 50px;
+}
+a.pseudo:visited {
+  color: yellow;
+  font-size: 12px;
+}
+a.pseudo:hover {
+  font-size: 100px;
+  color: black;
+}
+a.pseudo::before {
+  content: 'Pseudo Before';
+  font-size: 12px;
+  color: black;
+}
+a.pseudo::after {
+  content: 'Pseudo After';
+  text-decoration: none;
+  color: gray;
+  font-size: 10px;
+}
+p.asdf::first-letter {
+  font-size: 50px;
+}
+p.asdf::first-line {
+  color: green;
+}
+p {
+  
+}
+#priority {
+  color: blue;
+}
+.pri1.pri2.pri3.pri4.pri5.pri6.pri7.pri8.pri9.pri10.pri11 {
+  color: green;
+}
+
+
+/*a {
+  display: block;
+}
+a[href] {
+  color: red;
+}
+a[href="naver.com"] {
+  color: blue;
+}
+a[href~="abc"] {
+  color: green;
+}
+a[href^="abc"] {
+  color: cyan;
+}
+a[href$="sdf"] {
+  color: grey;
+}
+a[href*="fabc"] {
+  color: yellow;
+}
+a[href|="abc"] {
+  color: DarkRed;
+}*/

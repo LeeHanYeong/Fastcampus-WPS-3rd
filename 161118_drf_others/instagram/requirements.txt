@@ -1,0 +1,5 @@
+Django==1.10.3
+django-rest-auth==0.8.2
+djangorestframework==3.5.3
+Pillow==3.4.2
+six==1.10.0

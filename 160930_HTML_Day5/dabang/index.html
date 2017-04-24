@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- index custom css -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!--
+    jQuery library
+    https://code.jquery.com/
+      jQuery 2.x또는 jQuery 1.x를 script로 넣어줍니다
+  -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+  <!--
+    부트스트랩 컴포넌트 - 네비게이션 바
+    http://bootstrapk.com/components/#navbar
+
+    nav요소:
+      이 요소가 네비게이션임을 알려줍니다.
+      .navbar
+        네비게이션 바의 전체 형태를 나타내는 클래스입니다
+      .navbar-default
+        네비게이션 바의 형태를 제외한 스타일(border, background)을 지정합니다
+        .navbar-inverse로 바꾸면 색상이 반전됩니다
+      .navbar-no-margin
+        .navbar에 기본적으로 설정되어있는 margin-bottom값을 초기화해주기위해 설정
+  -->
+  <nav class="navbar navbar-default navbar-no-margin">
+    <!--
+      네비게이션 바의 내용을 넣는 block요소입니다.
+      가로 너비 전체를 사용할 것이므로 .container-fluid클래스를 사용합니다
+    -->
+    <div class="container-fluid">
+      <!--
+        .navbar-header
+          네비게이션바의 헤더 역할을 합니다
+          가장 좌측에 배치됩니다.
+          .navbar-brand
+            내부에 img요소를 넣으면 로고 이미지로 사용가능합니다
+      -->
+      <div class="navbar-header">
+        <!--
+          네비게이션 바를 Toggle시켜주는 버튼입니다
+          data-toggle="collapse"
+            열고 닫는 역할을 한다
+          data-target="#top-navbar"
+            #top-navbar 요소에 대해 동작한다
+        -->
+        <button
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#top-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!--
+          네비게이션 바 좌측 브랜드 로고입니다
+        -->
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.png" alt="">
+        </a>
+      </div><!-- navbar-header end -->
+
+      <!--
+        부트스트랩 컴포넌트 - 네비게이션 바
+          반응형 네비게이션 에뉴 사용
+        http://bootstrapk.com/components/#navbar
+      -->
+
+
+      <!--
+        .collapse .navbar-collapse
+          너비가 줄어들어 네비게이션 바가 사라질경우에 해당하는 부분
+          네비게이션 바 리스트와 내부 아이템들에 해당
+        .nav
+          navbar내부의 ul리스트 역할을 하며, 동시에 리스트의 스타일을 표시합니다
+            list-style: none;
+        .navbar-nav > li:
+          ul.navbar-nav클래스내의 li(리스트아이템)요소는 좌측부터 우로 쌓이는 형태로 만들어지도록 정의합니다
+            float: left; display: block;
+        .navbar-right:
+          네비게이션 바 내부에서 float: right;속성으로 우측 정렬을 지원합니다.
+      -->
+      <div id="top-navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- (li>a[href=#])*5 -->
+          <li><a href="#">방 검색</a></li>
+          <li><a href="#">관심목록</a></li>
+          <li><a href="#">방 등록</a></li>
+          <!-- 공백을 나타내기 위해 빈 li요소를 추가해줍니다 -->
+          <li><a></a></li>
+          <li><a href="#">공인중개사 가입</a></li>
+          <li><a href="#">회원가입 및 로그인</a></li>
+        </ul><!-- ul (네비게이션 바 내부 아이템 리스트 끝) -->
+      </div>
+    </div><!-- .container-fluid(네비게이션 바의 내용부분 끝) -->
+  </nav><!-- .nav (네비게이션 바 전체 끝) -->
+
+  <!--
+    index페이지의 내용부분을 담는 block요소입니다.
+    현재는 아무 속성도 없습니다
+  -->
+  <div class="index-content">
+    <div class="pet-list">
+      <div class="pet dog">Dog</div>
+      <div class="pet cat">Cat</div>
+      <div class="pet monkey">Monkey</div>
+    </div>
+
+    <!--
+      부트스트랩 컴포넌트 - 점보트론
+      http://bootstrapk.com/components/#jumbotron
+
+      .index-image-container
+        background-image를 설정해줍니다
+    -->
+    <div class="jumbotron index-image-container">
+      <!--
+        .caption-container
+          .index-image-container 내부의 텍스트 요소를 가지는 block요소입니다
+
+          .caption-top, .caption-bottom
+            텍스트를 나타냅니다
+      -->
+      <div class="caption-container">
+        <p class="caption-top">850만 명이 선택한 대표 부동산 앱</p>
+        <p class="caption-bottom">우리, 살고 싶은 데서 살자</p>
+      </div>
+
+      <!--
+        이 부분에 작성되어야겠죠
+          div요소를 이용해줍니다
+
+        해당 요소에 속성을 주기위해 class나 id값을 지정해줍니다
+        sass파일에 속성을 기록합니다
+          반투명한 색깔은 rgba(0, 0, 0, 0.5)를 사용하면
+            투명도 50%의 검은색이 되겠지요?
+          아래쪽에 붙기 위해서는 position을 absolute로!
+      -->
+      <div class="search-container">
+        <!--
+          form안쪽에
+            input요소와 button요소를 배치해주세요
+
+            form
+              .form-inline (부트스트랩 지원 클래스))
+                내부 요소들을 inline-block속성으로 배치한다
+            input
+              .form-control클래스로 부트스트랩 속성 적용
+            button
+              .btn, .btn-primary클래스로 부트스트랩 속성 적용
+
+            .form-search
+              text-align: center; 속성을 이용해서 내부 요소들을 가운데 정렬
+        -->
+        <form action="" class="form-inline form-search">
+          <div class="form-group">
+            ​<input type="text" class="form-control input-lg" placeholder="관심지역 또는 매물번호를 검색해보세요">
+          </div>
+          <button class="btn btn-primary btn-lg">방 검색</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="index-content-title-container">
+      <h2><strong>테마 검색</strong></h2>
+      <p>다방의 다양한 검색조건으로 방을 찾아보세요</p>
+    </div>
+
+    <!--
+      테마 아이템 목록
+        div요소 하나당 4/12를 차지하도록 div요소
+
+      부트스트랩 CSS - 그리드시스템
+        http://bootstrapk.com/css/#grid
+
+      col-xs-4
+        총 6개의 div 요소를 만들어보세요
+    -->
+    <div class="container theme-list">
+      <!-- div.col-xs-4>a[href=#].thumbnail>img -->
+
+      <!-- 반응형일 때 -->
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <!-- <img src="images/theme/pet.jpg" alt="" class="item-img"> -->
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <p class="caption-title">반려동물</p>
+            <div class="caption-divider"></div>
+            <p class="caption-desc">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <img src="images/theme/pet.jpg" alt="" class="item-img">
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <p class="caption-title">반려동물</p>
+            <div class="caption-divider"></div>
+            <p class="caption-desc">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <img src="images/theme/pet.jpg" alt="" class="item-img">
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <p class="caption-title">반려동물</p>
+            <div class="caption-divider"></div>
+            <p class="caption-desc">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <img src="images/theme/pet.jpg" alt="" class="item-img">
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <p class="caption-title">반려동물</p>
+            <div class="caption-divider"></div>
+            <p class="caption-desc">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 col-xs-6">
+        <div class="theme-item">
+          <img src="images/theme/pet.jpg" alt="" class="item-img">
+          <div class="item-mask"></div>
+          <div class="item-caption">
+            <p class="caption-title">반려동물</p>
+            <div class="caption-divider"></div>
+            <p class="caption-desc">Lorem ipsum dolor sit.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- 반응형이 아닐 때 -->
+      <!-- <div class="theme-item2">
+        <img src="images/theme/pet.jpg" alt="">
+        <div class="item2-mask"></div>
+        <div class="item2-caption">
+          <p class="caption-title">반려동물</p>
+          <div class="caption-divider"></div>
+          <p class="caption-desc">Lorem ipsum dolor sit.</p>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="sitemap-container">
+      <div class="sitemap-ul-con col-md-2 col-xs-6 col-md-offset-1">
+        <ul class="list-unstyled">
+          <li><strong>형태별 검색</strong></li>
+          <li>원룸</li>
+          <li>투룸</li>
+          <li>쓰리룸</li>
+          <li>오피스텔</li>
+          <li>아파트</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+        <ul class="list-unstyled">
+          <li><strong>형태별 검색</strong></li>
+          <li>원룸</li>
+          <li>투룸</li>
+          <li>쓰리룸</li>
+          <li>오피스텔</li>
+          <li>아파트</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+        <ul class="list-unstyled">
+          <li><strong>형태별 검색</strong></li>
+          <li>원룸</li>
+          <li>투룸</li>
+          <li>쓰리룸</li>
+          <li>오피스텔</li>
+          <li>아파트</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+        <ul class="list-unstyled">
+          <li><strong>형태별 검색</strong></li>
+          <li>원룸</li>
+          <li>투룸</li>
+          <li>쓰리룸</li>
+          <li>오피스텔</li>
+          <li>아파트</li>
+        </ul>
+      </div>
+      <div class="sitemap-ul-con col-md-2 col-xs-6">
+        <ul class="list-unstyled">
+          <li><strong>테마별 검색</strong></li>
+          <li>저보증금</li>
+          <li>오피스텔</li>
+          <li>직거래 매물</li>
+          <li>주차 가능</li>
+          <li>반려동물 가능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

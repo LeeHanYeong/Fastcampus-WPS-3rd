@@ -1,0 +1,32 @@
+{% load staticfiles %}
+{% load compress %}
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Instagram</title>
+
+	{% compress css %}
+	<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.css' %}">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{% static 'sass/base.sass' %}" type="text/x-sass">
+	{% endcompress %}
+</head>
+<body>
+<div id="wrap" class="container">
+	<h1><a href="{% url 'photo:photo_list' %}">Instagram!</a></h1>
+	<h4 style="margin-bottom: 20px">{% block wrap_title %}{% endblock %}</h4>
+	<div style="position: absolute; right: 10px; top: 10px;">{% block btn_right %}{% endblock %}</div>
+	<div id="content-container">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+</body>
+</html>

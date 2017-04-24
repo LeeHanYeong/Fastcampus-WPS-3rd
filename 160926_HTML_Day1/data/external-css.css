@@ -1,0 +1,12 @@
+/* CSS의 주석입니다 */
+#body-title3 {
+  font-size: 50px;
+  color: green;
+  background-color: #ff00ff;
+  /* CSS의 주석입니다 */
+  /*
+  rgb, rgba value사용법
+  background-color: rgb(255, 255, 0);
+  background-color: rgba(255, 0, 0, 0.5);
+  */
+}

@@ -1,0 +1,113 @@
+<!--
+  부트스트랩 CSS 연습
+  http://bootstrapk.com/css/
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootstrap CSS</title>
+
+  <!-- Bootstrap CSS파일 링크 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <!-- css.html에 해당하는 커스텀 css파일 -->
+  <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+  <div class="container">
+    <h5>div.row>(div.col-md-1{.col-md-1})*12</h5>
+    <div class="row">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+
+    <h5>div.row>div.col-md-8{.col-md-8}+div.col-md-4{.col-md-4}</h5>
+    <div class="row">
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+
+    <!--모바일 반응형 예제 -->
+    <h5>div.row>div.col-xs-12.col-md-8{.col-xs-12 .col-md-8}+div.col-xs-6.col-md-4{.col-xs-6 .col-md-4}</h5>
+    <div class="row">
+      <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+
+    <h4>타이포그래피</h4>
+    <h1>웹 프로그래밍 스쿨 <small>Fastcampus</small></h1>
+
+    <p class="lead">Lead Lorem ipsum dolor.</p>
+    <p>Lorem ipsum <mark>dolor</mark> sit amet, consectetur adipisicing elit. Perspiciatis cumque delectus magnam recusandae, aperiam molestias possimus provident? Consequatur excepturi quam expedita numquam tenetur. Culpa, similique! Consectetur alias doloremque ratione saepe molestias eligendi similique sapiente quidem quo. Odio repellat, obcaecati, aliquam alias commodi voluptas eum ipsum distinctio provident omnis sequi vitae!</p>
+
+    <blockquote cite="http://">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, fugiat?</p>
+      <footer>Lorem ipsum dolor sit.</footer>
+    </blockquote>
+
+    <p>Lorem ipsum <code>subprocess(cmd, shell=True)</code> dolor sit amet.</p>
+
+    <pre>
+      class Post:
+        title = models.CharField(max_length=200)
+        author = models.ForeignKey(User)</pre>
+
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>item1</th>
+          <th>item2</th>
+          <th>item3</th>
+          <th>item4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="success">
+          <td>item1</td>
+          <td class="danger">item2</td>
+          <td>item3</td>
+          <td>item4</td>
+        </tr>
+        <tr class="active">
+          <td>item1</td>
+          <td>item2</td>
+          <td>item3</td>
+          <td>item4</td>
+        </tr>
+        <tr>
+          <td>item1</td>
+          <td>item2</td>
+          <td>item3</td>
+          <td>item4</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--
+      부트스트랩 컴포넌트 glyphicons
+      http://bootstrapk.com/components/
+    -->
+    <h4>Form glyphicon</h4>
+    <!-- div.form-group.has-success.has-feedback -->
+    <div class="form-group has-success has-feedback">
+      <label for="" class="control-label">Input with success</label>
+      <input type="text" class="form-control">
+      <span class="glyphicon glyphicon-signal form-control-feedback"></span>
+    </div>
+  </div>
+</body>
+</html>
